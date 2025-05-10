@@ -214,6 +214,20 @@
       }
     })
   }
+  function togglePhones() {
+    const modal = document.getElementById('phoneModal');
+    modal.style.display = (modal.style.display === 'block') ? 'none' : 'block';
+  }
+  window.togglePhones = togglePhones;
+
+
+  window.addEventListener('click', function(e) {
+    const modal = document.getElementById('phoneModal');
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 

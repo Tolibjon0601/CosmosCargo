@@ -15,6 +15,8 @@
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Raleway",  sans-serif;
   --nav-font: "Poppins",  sans-serif;
+  --accent-color: #3498db;
+  --contrast-color: white;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -22,7 +24,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #282828; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #009961; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #269EDA; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -30,11 +32,11 @@
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #009961; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #269EDA; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #009961; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #269EDA; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -831,19 +833,102 @@ section,
   position: relative;
   z-index: 3;
 }
- .hero .button_hero{
-padding: 10px 30px;
-background-color: var(--accent-color);
 
-color: var(--contrast-color);
-font-size: 18px;
-font-weight: 500;
-border: none;
-border-radius: 50px;
+.button_hero {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 250px;
+  height: 50px;
+  padding: 8px 20px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  animation: pulse 2s infinite;
+  transition: background-color 0.3s ease;
 }
-.hero .button_hero :hover{
-  background-color: #fff;
+.button_hero:hover{
+background-color:white;
+color: var(--accent-color);
 }
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  background-color: #efefef;
+  margin: 10% auto;
+  padding: 30px 25px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: left;
+  margin-top: 100px;
+  animation: fadeIn 0.3s ease-in-out;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.close {
+  color: #de4949;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover {
+  color: #fb1818;
+}
+
+.phone-item {
+  margin: 15px 0;
+}
+
+.phone-item a {
+  font-size: 18px;
+  font-weight: bold;
+  color: #07076f;
+  text-decoration: none;
+}
+
+.phone-item small {
+  display: block;
+  color: #777;
+  margin-top: 5px;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+  }
+}
+
  .hero .button_div{
   display: flex;
   gap: 20px;
