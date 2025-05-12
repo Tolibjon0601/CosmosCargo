@@ -867,6 +867,54 @@ color: var(--accent-color);
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+
+
+
+
+
+
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 40px;
+}
+
+.dropdown-toggle {
+  padding: 10px 15px;
+
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #000;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
 .modal-content {
   background-color: #efefef;
   margin: 10% auto;
